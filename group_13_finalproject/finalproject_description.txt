@@ -1,0 +1,80 @@
+Group 13 Final Project Description
+
+Overview:
+Our final project is 2D side-scrolling game with platforming and shooting elements. The player can move and jump with WASD/arrow keys. They can jump on the boxes/platforms/chandelier to get around the level. Space bar will shoot bullets in the direction that the player is facing. 
+
+Enemies walk randomly around the map and are animated sprites. If they are shot, they will die and fade away. If the player runs into an enemy, they will lose a life, the screen will flash red, and the player will be briefly invulnerable. At the far right end of the level, there is a portal that the player can click on to teleport back to the beginning of the level. The portal is animated to rotate and move up/down. 
+
+The game begins with a Start Screen that displays high score ranking, instructions, and a start button.
+Pressing P will pause the game and bring up a GUI with Continue, Quit, and Restart buttons.
+Dying will bring up the Defeat screen GUI with Restart and Quit buttons.
+Restarting will bring you back to the Start menu.
+
+High Scores are kept track in a CSV file. 
+There is also background music that can be toggled on/off by pressing 'M'. 
+
+_________________________________________________________________________________
+
+Class descriptions:
+group_13_finalproject.pde:
+brings most of the project together and handles mouse/key listening.
+
+Bullet.pde:
+This file contains the bullets which are shot by the player. the player will shoot toward right when facing right, left when facing left. It also contains a collision detection function which will judge whether the enemies are been hit by the bullets.
+
+Enemies.pde:
+this file contains the Enemy class and Swarm class, which each Enemy will represent one enemy in the game. It also contains display function which controls the display of the enemies and die function which make the enemies die when they are shot.
+The code in this file will basically create a bunch of enemies and make them move left and right in a certain range. It will invoke the die animation when enemies are shot. It will also revive the enemies after they are dead for a certain time. 
+
+GUI.pde:
+This file contains Button classes and GUI elements. (startscreen, pausescreen, defeatscreen, hud).
+
+Level.pde:
+This file handles the platforms of the level with various wall/boundary objects build up in a Level. The View class handles the side-scrolling of the map and keeping camera centered on the player. This is done through translation.
+
+Physics.pde: 
+A versatile physics class that handles forces on an object. It is used in the Player Class to handle movement of a character.
+
+Player.pde:
+Keeps track of which direction the player is facing and whether they are idle, walking, or in the air. Displays the appropriate animations for the character (animated sprite). There is also code in here to make sure bullets fire from the player.
+
+rank.pde:
+This file contains the ranking which is shown at the beginning of the game. 
+It will show at most 10 high scores, and will automatically change when a game is over and the score is higher then the minimum in the ranking.
+
+_____________________________________________________________________________
+
+Work Division:
+
+Zhengyu (Mark) worked mainly on the bullets, enemies, and the high score ranking. He changed the enemies from our previous project to patrol on the ground, respawn, and detect when they are hit by bullets.
+
+Anna worked mainly on the building the level with platforms/walls, player controls, and GUI. She also drew the map and made the character sprite animations. She also added the portal.
+
+Daniel helped with making graphics/sprites for the game. He also helped debug and figure out collission between the player and enemies so that the player would lose lives upon collission. He also worked on enemies. 
+____________________________________________________________________________
+
+Credits:
+
+Background Music is Deep Haze by Kevin MacLeod.
+Royalty Free music from Incompetech.com
+http://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100886
+
+The enemy sprites are from: http://smithygcn.deviantart.com/art/Mothman-Redux-198214746
+
+The character sprites were created by modifying an image of The Highwayman from the game "Darkest Dungeon" developed by Red Hook Studios. 
+
+Wall textures used in the map are from filterforge.com:
+https://filterforge.com/filters/2897.html?psdtutsplus
+https://www.filterforge.com/filters/4585-v3.html
+
+
+
+
+
+
+
+
+
+
+
+
